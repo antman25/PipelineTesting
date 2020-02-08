@@ -29,3 +29,21 @@ agent any
     }
 }
 
+import static groovy.io.FileType.FILES
+
+@NonCPS
+def inputParamsString(dir) {
+    def list = []
+    
+    // If you don't want to search recursively then change `eachFileRecurse` -> `eachFile`
+    dir.eachFileRecurse(FILES) {
+        // Change `.properties` to the file extension you are interested in
+        if(it.name.endsWith('.properties')) {
+            // If the full path is required remove `.getName()`
+            list << it.getName()
+        }
+    }
+    
+    list.join("\n")
+}
+
