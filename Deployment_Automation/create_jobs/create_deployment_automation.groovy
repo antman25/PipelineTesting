@@ -24,10 +24,13 @@ def cfg_data = readFileFromWorkspace('Deployment_Automation/config/MyConfig.json
 print (cfg_data)
 
 def inputJson = new JsonSlurper().parseText(cfg_data)
+def keys = inputJson.keySet() as List
 
 inputJson.each { k, v ->
   println k
 }
+
+println (keys)
 
 
 folder('Deployment Automation') {
