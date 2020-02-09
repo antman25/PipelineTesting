@@ -1,9 +1,13 @@
 node {
 	def props = readJSON file: 'Deployment_Automation/HelperJobs/HelperJob1/test.json'
         def keys = props.keySet() as List
+	properties (
+	[
+        	parameters (
+			 [ choice(name: 'CHOICE', choices: keys, description: 'Pick something') ]
+			)
+	])
 
-        parameters {
-		choice(name: 'CHOICE', choices: keys, description: 'Pick something')
 	}
 	stage ('Stage 1')
 	{
