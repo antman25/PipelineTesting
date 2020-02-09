@@ -46,9 +46,16 @@ branches.each {
         scm {
             git("git://github.com/${project}.git", branchName)
         }
-        steps {
-            println(" why print this test")
-        }
+        //steps {
+        //    println(" why print this test")
+        //}
+        stages {
+            stage('Example') {
+                steps { 
+                    echo 'Hello World'
+                }
+            }
+         }
     }
 }
 
