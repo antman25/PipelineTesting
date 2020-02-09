@@ -47,7 +47,7 @@ branches.each {
             git("git://github.com/${project}.git", branchName)
         }
         steps {
-            print("test")
+            println(" why print this test")
         }
     }
 }
