@@ -23,6 +23,8 @@ def branches = new groovy.json.JsonSlurper().parse(branchApi.newReader())
 def cfg_data = readFileFromWorkspace('Deployment_Automation/config/MyConfig.json')
 print (cfg_data)
 
+def inputJSON = new JsonSlurper().parse(cfg_data)
+
 inputJson.each { k, v ->
   println k
 }
