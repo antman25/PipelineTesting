@@ -1,7 +1,13 @@
+def props = readJSON file: 'test.json'
+def keys = props.keySet() as List
+
 pipeline 
 {
 	agent any
 	//checkout scm
+	parameters {
+		choiceParam('OPTION', keys)
+	}
 	stages {
 		stage('Stage 1') {
 			steps {
