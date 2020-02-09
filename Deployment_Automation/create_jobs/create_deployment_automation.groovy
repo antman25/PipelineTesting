@@ -1,15 +1,15 @@
 #!/usr/bin/env groovy
 import groovy.json.JsonSlurper
 
-env.WORKSPACE = pwd()
+//env.WORKSPACE = pwd()
 
 
 String currentDir = new File(".").getAbsolutePath()
-String cfg_path = "${env.WORKSPACE}/"
+//String cfg_path = "${env.WORKSPACE}/"
 
 
 println ("Current dir is ${currentDir}")
-println ("Config Path is ${cfg_path}")
+//println ("Config Path is ${cfg_path}")
 
 //def inputFile = new File('.//MyConfig.json')
 //def inputJSON = new JsonSlurper().parse(inputFile)
