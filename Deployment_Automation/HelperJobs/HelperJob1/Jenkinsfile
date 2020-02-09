@@ -1,5 +1,7 @@
-def props = readJSON file: 'test.json'
-def keys = props.keySet() as List
+node {
+	def props = readJSON file: 'test.json'
+	def keys = props.keySet() as List
+}
 
 pipeline 
 {
