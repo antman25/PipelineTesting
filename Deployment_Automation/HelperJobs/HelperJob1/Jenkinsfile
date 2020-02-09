@@ -1,14 +1,23 @@
+node {
+	def props = readJSON file: 'Deployment_Automation/HelperJobs/HelperJob1/test.json'
+        def keys = props.keySet() as List
 
-pipeline 
+        parameters {
+		choice(name: 'CHOICE', choices: keys, description: 'Pick something')
+	}
+	stage ('Stage 1')
+	{
+		echo 'testt testsetestest'
+	}
+}
+
+/*pipeline 
 {
-	agent {
-		node {
-			label ("test")
+	agent any
 			def props = readJSON file: 'Deployment_Automation/HelperJobs/HelperJob1/test.json'
 			def keys = props.keySet() as List
-		}
-	}
 
+	properties
 
 	parameters {
 	        //def props = readJSON file: 'Deployment_Automation/HelperJobs/HelperJob1/test.json'
@@ -24,4 +33,4 @@ pipeline
 			}
 		}
 	}
-}
+}*/
