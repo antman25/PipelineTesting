@@ -1,7 +1,3 @@
-node {
-	def props = readJSON file: 'Deployment_Automation/HelperJobs/HelperJob1/test.json'
-	def keys = props.keySet() as List
-}
 
 pipeline 
 {
@@ -9,9 +5,15 @@ pipeline
 	//checkout scm
 
 
+	node {
+		def props = readJSON file: 'Deployment_Automation/HelperJobs/HelperJob1/test.json'
+		def keys = props.keySet() as List
+	}
+
+
 	parameters {
-	        def props = readJSON file: 'Deployment_Automation/HelperJobs/HelperJob1/test.json'
-        	def keys = props.keySet() as List
+	        //def props = readJSON file: 'Deployment_Automation/HelperJobs/HelperJob1/test.json'
+        	//def keys = props.keySet() as List
 
 		//choiceParam('OPTION', keys)
 		choice(name: 'CHOICE', choices: keys, description: 'Pick something')
