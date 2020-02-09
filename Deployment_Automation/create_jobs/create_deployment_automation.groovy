@@ -61,9 +61,9 @@ pipelineJob('DSL_Pipeline') {
 
   def repo = 'https://github.com/antman25/PipelineTesting.git'
 
-  triggers {
-    scm('H/5 * * * *')
-  }
+  //triggers {
+  //  scm('H/5 * * * *')
+  //}
   description("Pipeline for $repo")
 
   definition {
