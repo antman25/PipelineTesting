@@ -7,6 +7,10 @@ pipeline
 {
 	agent any
 	//checkout scm
+        def props = readJSON file: 'Deployment_Automation/HelperJobs/HelperJob1/test.json'
+        def keys = props.keySet() as List
+
+
 	parameters {
 		//choiceParam('OPTION', keys)
 		choice(name: 'CHOICE', choices: keys, description: 'Pick something')
