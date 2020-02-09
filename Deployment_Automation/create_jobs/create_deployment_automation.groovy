@@ -1,6 +1,10 @@
 #!/usr/bin/env groovy
 import groovy.json.JsonSlurper
 
+String currentDir = new File(".").getAbsolutePath()
+
+print ("Current dir is ${currentDir}")
+
 def inputFile = new File('.//MyConfig.json')
 def inputJSON = new JsonSlurper().parse(inputFile)
 def keys = inputJSON.keySet() as List
@@ -8,6 +12,8 @@ def keys = inputJSON.keySet() as List
 def project = 'antman25/PipelineTesting'
 def branchApi = new URL("https://api.github.com/repos/${project}/branches")
 def branches = new groovy.json.JsonSlurper().parse(branchApi.newReader())
+
+
 
 inputJson.each { k, v ->
   println k
