@@ -1,6 +1,7 @@
-checkout scm
+
 
 node {
+    checkout scm
     jobDsl scriptText: 'job("example-2")'
 
     jobDsl targets: ['create_deployment_automation.groovy'].join('\n'),
