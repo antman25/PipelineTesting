@@ -42,7 +42,7 @@ branches.each {
     def branchName = it.name
     def jobName = "${branchName}".replaceAll('/','-')
     def jobPath = "Deployment Automation/" + jobName
-    job(jobPath) {
+    pipelineJob(jobPath) {
         scm {
             git("git://github.com/${project}.git", branchName)
         }
