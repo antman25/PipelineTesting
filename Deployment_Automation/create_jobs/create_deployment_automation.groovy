@@ -1,8 +1,17 @@
 #!/usr/bin/env groovy
+import groovy.json.JsonSlurper
+
+def inputFile = new File('.//MyConfig.json')
+def inputJSON = new JsonSlurper().parse(inputFile)
+def keys = inputJSON.keySet() as List
 
 def project = 'antman25/PipelineTesting'
 def branchApi = new URL("https://api.github.com/repos/${project}/branches")
 def branches = new groovy.json.JsonSlurper().parse(branchApi.newReader())
+
+inputJson.each { k, v ->
+  println k
+}
 
 
 folder('Deployment Automation') {
