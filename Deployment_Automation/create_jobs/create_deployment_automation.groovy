@@ -19,8 +19,9 @@ def project = 'antman25/PipelineTesting'
 def branchApi = new URL("https://api.github.com/repos/${project}/branches")
 def branches = new groovy.json.JsonSlurper().parse(branchApi.newReader())
 
-jsonParse(readFile('Deployment_Automation/config/MyConfig.json')) 
-
+#jsonParse(readFile('Deployment_Automation/config/MyConfig.json')) 
+def cfg_data = readFileFromWorkspace('Deployment_Automation/config/MyConfig.json')
+print (cfg_data)
 
 inputJson.each { k, v ->
   println k
