@@ -1,13 +1,11 @@
 
 pipeline 
 {
-	agent any
-	//checkout scm
-
-
-	node {
-		def props = readJSON file: 'Deployment_Automation/HelperJobs/HelperJob1/test.json'
-		def keys = props.keySet() as List
+	agent {
+		node {
+			def props = readJSON file: 'Deployment_Automation/HelperJobs/HelperJob1/test.json'
+			def keys = props.keySet() as List
+		}
 	}
 
 
