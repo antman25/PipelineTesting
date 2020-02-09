@@ -6,7 +6,8 @@ pipeline
 	agent any
 	//checkout scm
 	parameters {
-		choiceParam('OPTION', keys)
+		//choiceParam('OPTION', keys)
+		choice(name: 'CHOICE', choices: keys, description: 'Pick something')
 	}
 	stages {
 		stage('Stage 1') {
