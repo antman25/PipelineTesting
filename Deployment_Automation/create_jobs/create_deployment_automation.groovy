@@ -54,15 +54,31 @@ branches.each {
         steps {
             println(" why print this test")
         }
-        /*stages {
-            stage('Example') {
-                steps { 
-                    echo 'Hello World'
-                }
-            }
-         }
-        */
     }
+}
+
+pipelineJob('DSL_Pipeline') {
+
+  def repo = 'https://github.com/antman25/PipelineTesting.git'
+
+  triggers {
+    scm('H/5 * * * *')
+  }
+  description("Pipeline for $repo")
+
+  definition {
+    cpsScm {
+      scm {
+        git {
+          remote { url(repo) }
+          branches('master', '**/feature*')
+          scriptPath('Deployment_Automation/HelperJobs/HelperJob1/Jenkinsfile')
+          extensions { }  // required as otherwise it may try to tag the repo, which you may not want
+        }
+
+      }
+    }
+  }
 }
 
 def jsonParse(text) {
