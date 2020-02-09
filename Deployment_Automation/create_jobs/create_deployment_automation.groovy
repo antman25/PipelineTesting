@@ -42,20 +42,26 @@ branches.each {
     def branchName = it.name
     def jobName = "${branchName}".replaceAll('/','-')
     def jobPath = "Deployment Automation/" + jobName
-    pipelineJob(jobPath) {
+    job(jobPath) {
+        parameters {
+            booleanParam('FLAG', true)
+            choiceParam('OPTION', keys)
+        }
+
         scm {
             git("git://github.com/${project}.git", branchName)
         }
-        //steps {
-        //    println(" why print this test")
-        //}
-        stages {
+        steps {
+            println(" why print this test")
+        }
+        /*stages {
             stage('Example') {
                 steps { 
                     echo 'Hello World'
                 }
             }
          }
+        */
     }
 }
 
