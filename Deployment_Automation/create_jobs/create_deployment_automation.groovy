@@ -46,7 +46,6 @@ branches.each {
     }
 }
 
-@NonCPS
 def jsonParse(text) {
         return new groovy.json.JsonSlurperClassic().parseText(text);
 }
