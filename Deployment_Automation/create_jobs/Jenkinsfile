@@ -1,7 +1,10 @@
 
 
 node {
-    checkout scm
+    stage ('SCM checkout')
+    {
+        checkout scm
+    }
     stage ('RegJob Stage')
     {
         jobDsl scriptText: 'job("example-2")'
