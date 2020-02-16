@@ -3,7 +3,7 @@
 node {
     stage ('SCM checkout')
     {
-        checkout scm
+        //checkout scm
     }
     stage ('RegJob Stage')
     {
