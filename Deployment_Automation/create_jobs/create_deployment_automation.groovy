@@ -11,7 +11,7 @@ String currentDir = new File(".").getAbsolutePath()
 println ("Current dir is ${currentDir}")
 //println ("Config Path is ${cfg_path}")
 
-println ("BASE = ${env.JOB_BASE_NAME}")
+println ("BASE = ${JOB_BASE_NAME}")
 
 //def inputFile = new File('.//MyConfig.json')
 //def inputJSON = new JsonSlurper().parse(inputFile)
