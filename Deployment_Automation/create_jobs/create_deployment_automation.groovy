@@ -38,8 +38,8 @@ folder('Deployment Automation') {
     description('Deployment Automation - Desc')
 }
 
-folder('RemoveTest') {
-    displayName('Deployment Automation RemoveTest')
+folder('RemoveTestA') {
+    displayName('Deployment Automation RemoveTestA')
     description('Deployment Automation - Desc')
 }
 
