@@ -38,10 +38,10 @@ folder('Deployment Automation') {
     description('Deployment Automation - Desc')
 }
 
-folder('RemoveTestA') {
+/*folder('RemoveTestA') {
     displayName('Deployment Automation RemoveTestA')
     description('Deployment Automation - Desc')
-}
+}*/
 
 branches.each {
     def branchName = it.name
