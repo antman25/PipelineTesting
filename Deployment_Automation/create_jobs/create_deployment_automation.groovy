@@ -38,6 +38,11 @@ folder('Deployment Automation') {
     description('Deployment Automation - Desc')
 }
 
+folder('RemoveTest') {
+    displayName('Deployment Automation RemoveTest')
+    description('Deployment Automation - Desc')
+}
+
 branches.each {
     def branchName = it.name
     def jobName = "${branchName}".replaceAll('/','-')
