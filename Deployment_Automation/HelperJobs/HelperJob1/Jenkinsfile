@@ -18,6 +18,10 @@ node {
 	{
 		sh('printenv')
 	}
+	stage ('asdf')
+	{
+		echo "This is TEST_PATH ${TEST_PATH}"
+	}
 	stage ('Stage 1')
 	{
 		echo 'testt testsetestest'
