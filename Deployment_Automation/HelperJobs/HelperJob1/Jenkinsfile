@@ -11,7 +11,9 @@ node {
 	//checkout scm
 	stage ('Dump Env')
 	{
-		printenv
+		steps{
+			sh('printenv')
+		}
 	}
 	stage ('Stage 1')
 	{
