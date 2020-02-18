@@ -9,6 +9,10 @@ node {
 	])
 
 	//checkout scm
+	stage ('Dump Env')
+	{
+		printenv
+	}
 	stage ('Stage 1')
 	{
 		echo 'testt testsetestest'
