@@ -72,6 +72,10 @@ pipelineJob('DSL_Pipeline') {
   //  scm('H/5 * * * *')
   //}
   description("Pipeline for $repo")
+  
+  environmentVariables {
+        script("GIT_ROOT_DIR=`git rev-parse --show-toplevel`")
+    }
 
   definition {
     cpsScm {
