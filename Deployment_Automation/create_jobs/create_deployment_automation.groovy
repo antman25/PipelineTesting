@@ -3,6 +3,7 @@ import groovy.json.JsonSlurper
 
 //env.WORKSPACE = pwd()
 
+println new ProcessBuilder('sh','-c',' git rev-parse --show-toplevel').redirectErrorStream(true).start().text
 
 String currentDir = new File(".").getAbsolutePath()
 //String cfg_path = "${env.WORKSPACE}/"
