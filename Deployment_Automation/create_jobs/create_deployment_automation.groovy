@@ -6,7 +6,8 @@ import groovy.json.JsonSlurper
 println new ProcessBuilder('sh','-c',' git rev-parse --show-toplevel').redirectErrorStream(true).start().text
 
 //def myVar = build.getBuildVariables().get('myVar')
-println ("Workspace = ${env.BRANCH_NAME}")
+def BUILD_NUMBER = getBinding().getVariables()['BUILD_NUMBER']
+println ("Workspace = ${BUILD_NUMBER}")
 
 String currentDir = new File(".").getAbsolutePath()
 //String cfg_path = "${env.WORKSPACE}/"
