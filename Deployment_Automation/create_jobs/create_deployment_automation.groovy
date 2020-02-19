@@ -4,6 +4,10 @@ import jenkins.*
 import jenkins.model.*
 import hudson.*
 import hudson.model.*
+import jenkins.model.Jenkins
+import hudson.model.User
+import hudson.security.Permission
+import hudson.EnvVars
       
 //env.WORKSPACE = pwd()
 
@@ -26,8 +30,11 @@ all_vars.each { item ->
       println ("echo getEnvironment: ${item}")
   }*/
 
-def build = Thread.currentThread().executable
-println(build.workspace.toString())
+//def build = Thread.currentThread().executable
+//println(build.workspace.toString())
+
+def test_workspace = envVars.get('WORKSPACE')
+println("TestWorkspace = ${test_workspace}")
 
 println ("Workspace = ${WORKSPACE}")
 
