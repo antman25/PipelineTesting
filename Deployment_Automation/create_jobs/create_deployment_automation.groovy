@@ -7,7 +7,8 @@ println new ProcessBuilder('sh','-c',' git rev-parse --show-toplevel').redirectE
 
 //def myVar = build.getBuildVariables().get('myVar')
 def BUILD_NUMBER = getBinding().getVariables()['BUILD_NUMBER']
-println ("Workspace = ${BUILD_NUMBER}")
+def WORKSPACE = getBinding().getVariables()['BUILD_NUMBER']
+println ("Workspace = ${WORKSPACE}")
 
 String currentDir = new File(".").getAbsolutePath()
 //String cfg_path = "${env.WORKSPACE}/"
