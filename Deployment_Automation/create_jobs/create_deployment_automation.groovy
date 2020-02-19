@@ -21,7 +21,7 @@ println ("Workspace = ${WORKSPACE}")
 String currentDir = new File(".").getAbsolutePath()
 //String cfg_path = "${env.WORKSPACE}/"
 
-
+println ("Env var from seed: ${message}")
 println ("Current dir is ${currentDir}")
 //println ("Config Path is ${cfg_path}")
 
