@@ -1,6 +1,27 @@
+pipeline
+{
+    agent any
+    stages 
+    {
+        stage ('RegJob Stage')
+        {
+            steps
+            {
+                jobDsl scriptText: 'job("example-2")'
+            }    
+        }
+        stage ('Pipeline Stage Build')
+        {
+            jobDsl targets: ['Deployment_Automation/create_jobs/create_deployment_automation.groovy'].join('\n'),
+                   removedJobAction: 'DELETE',
+                   removedViewAction: 'DELETE',
+                   lookupStrategy: 'SEED_JOB',
+                   additionalParameters: [message: 'Hello from pipeline', credentials: 'SECRET']
+        }
+    }
+}
 
-
-node {
+/*node {
     stage ('SCM checkout')
     {
         checkout scm
@@ -17,4 +38,4 @@ node {
                lookupStrategy: 'SEED_JOB',
                additionalParameters: [message: 'Hello from pipeline', credentials: 'SECRET']
     }
-}
+}*/
