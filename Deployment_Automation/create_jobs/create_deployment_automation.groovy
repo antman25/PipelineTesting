@@ -7,7 +7,7 @@ println new ProcessBuilder('sh','-c',' git rev-parse --show-toplevel').redirectE
 
 //def myVar = build.getBuildVariables().get('myVar')
 def BUILD_NUMBER = getBinding().getVariables()['BUILD_NUMBER']
-def WORKSPACE = getBinding().getVariables()['BUILD_NUMBER']
+def WORKSPACE = getBinding().getVariables()['WORKSPACE']
 println ("Workspace = ${WORKSPACE}")
 
 String currentDir = new File(".").getAbsolutePath()
