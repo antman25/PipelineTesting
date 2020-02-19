@@ -41,8 +41,8 @@ all_vars.each { item ->
 //def build = Thread.currentThread().executable
 //println(build.workspace.toString())
 
-def test_workspace = envVars.get('WORKSPACE')
-println("TestWorkspace = ${test_workspace}")
+//def test_workspace = envVars.get('WORKSPACE')
+//println("TestWorkspace = ${test_workspace}")
 
 println ("Workspace = ${WORKSPACE}")
 
