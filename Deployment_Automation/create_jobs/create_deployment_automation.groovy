@@ -9,11 +9,13 @@ import hudson.model.User
 import hudson.security.Permission
 import hudson.EnvVars
 
-EnvironmentVariablesNodeProperty prop = jenkins.getGlobalNodeProperties().get(EnvironmentVariablesNodeProperty.class)
-EnvVars env = prop.getEnvVars()
+jenkins = Jenkins.instance
 
-def MY_VAR = env['WORKSPACE']
-println("TEST3 = ${MY_VAR}")
+//EnvironmentVariablesNodeProperty prop = jenkins.getGlobalNodeProperties().get(EnvironmentVariablesNodeProperty.class)
+//EnvVars env = prop.getEnvVars()
+
+//def MY_VAR = env['WORKSPACE']
+//println("TEST3 = ${MY_VAR}")
       
 //env.WORKSPACE = pwd()
 
