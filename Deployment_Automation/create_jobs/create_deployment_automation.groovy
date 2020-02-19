@@ -1,6 +1,10 @@
 #!/usr/bin/env groovy
 import groovy.json.JsonSlurper
-
+import jenkins.*
+import jenkins.model.*
+import hudson.*
+import hudson.model.*
+      
 //env.WORKSPACE = pwd()
 
 println new ProcessBuilder('sh','-c',' git rev-parse --show-toplevel').redirectErrorStream(true).start().text
