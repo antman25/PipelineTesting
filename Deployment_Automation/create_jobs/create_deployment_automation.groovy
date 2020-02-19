@@ -19,7 +19,7 @@ def WORKSPACE = getBinding().getVariables()['WORKSPACE']
 
 def all_vars = getBinding().getVariables()
 
-//def all_env = getBinding().getEnvironment()
+def all_env = env.getEnvironment()
 
 //for var in all_vars
 all_vars.each { item ->
