@@ -11,16 +11,19 @@ def WORKSPACE = getBinding().getVariables()['WORKSPACE']
 
 def all_vars = getBinding().getVariables()
 
-def all_env = getBinding().getEnvironment()
+//def all_env = getBinding().getEnvironment()
 
 //for var in all_vars
 all_vars.each { item ->
       println ("echo getVariables: ${item}")
   }
 
-all_env.each { item ->
+/*all_env.each { item ->
       println ("echo getEnvironment: ${item}")
-  }
+  }*/
+
+def build = Thread.currentThread().executable
+println(build.workspace.toString())
 
 println ("Workspace = ${WORKSPACE}")
 
