@@ -112,14 +112,14 @@ branches.each {
             description("FolderTest")
       }
 
-for (i = 0;i<3;i++)
+for (i = 0;i<20;i++)
 {
       folder("FolderTest/TestFolder${i}") 
       {
             displayName("TestFolder${i}")
             description("TestFolder${i}")
       }
-      for (j=0;j<3;j++)
+      for (j=0;j<15;j++)
       {
             pipelineJob("FolderTest/TestFolder${i}/DSL_Pipeline ${i} - ${j}") 
             {
