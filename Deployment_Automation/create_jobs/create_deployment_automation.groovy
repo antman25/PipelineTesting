@@ -106,16 +106,22 @@ branches.each {
     }
 }
 
+ folder("FolderTest") 
+      {
+            displayName("FolderTest")
+            description("FolderTest")
+      }
+
 for (i = 0;i<3;i++)
 {
-      folder("TestFolder${i}") 
+      folder("FolderTest/TestFolder${i}") 
       {
             displayName("TestFolder${i}")
             description("TestFolder${i}")
       }
       for (j=0;j<3;j++)
       {
-            pipelineJob("TestFolder${i}/DSL_Pipeline ${i} - ${j}") 
+            pipelineJob("FolderTest/TestFolder${i}/DSL_Pipeline ${i} - ${j}") 
             {
                   def repo = 'https://github.com/antman25/PipelineTesting.git'
                   description("Pipeline for $repo")
