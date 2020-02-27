@@ -110,7 +110,7 @@ for (i = 0;i<3;i++)
 {
       for (j=0;j<3;j++)
       {
-      pipelineJob('DSL_Pipeline') 
+            pipelineJob('DSL_Pipeline ${i} - ${j}') 
       {
 
         def repo = 'https://github.com/antman25/PipelineTesting.git'
