@@ -119,9 +119,9 @@ for (i = 0;i<20;i++)
             displayName("TestFolder${i}")
             description("TestFolder${i}")
       }
-      for (j=0;j<15;j++)
+      for (j=0;j<20;j++)
       {
-            pipelineJob("FolderTest/TestFolder${i}/DSL_Pipeline ${i} - ${j}") 
+            pipelineJob("FolderTest/TestFolder${i}/DSL_Pipeline ${i} - ${j} -asdf") 
             {
                   def repo = 'https://github.com/antman25/PipelineTesting.git'
                   description("Pipeline for $repo")
