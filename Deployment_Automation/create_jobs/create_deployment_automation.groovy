@@ -111,35 +111,30 @@ for (i = 0;i<3;i++)
       for (j=0;j<3;j++)
       {
             pipelineJob('DSL_Pipeline ${i} - ${j}') 
-      {
-
-        def repo = 'https://github.com/antman25/PipelineTesting.git'
-
-        //triggers {
-        //  scm('H/5 * * * *')
-        //}
-        description("Pipeline for $repo")
-
-        /*environmentVariables {
-              script("GIT_ROOT_DIR=`git rev-parse --show-toplevel`")
-          }*/
-
-        definition {
-          cpsScm {
-            scm {
-              git {
-                remote { 
-                    url(repo)
-                    credentials('MyGit') 
-                }
-                branch('master')
-                scriptPath('Deployment_Automation/HelperJobs/HelperJob1/Jenkinsfile')
-                extensions { }  // required as otherwise it may try to tag the repo, which you may not want
-              }
-
+            {
+                  def repo = 'https://github.com/antman25/PipelineTesting.git'
+                  description("Pipeline for $repo")
+                  definition 
+                  {
+                        cpsScm 
+                        {
+                              scm 
+                              {
+                                    git 
+                                    {
+                                          remote 
+                                          { 
+                                                url(repo)
+                                                credentials('MyGit')
+                                          }
+                                          branch('master')
+                                          scriptPath('Deployment_Automation/HelperJobs/HelperJob1/Jenkinsfile')
+                                          extensions { }  // required as otherwise it may try to tag the repo, which you may not want
+                                    }
+                              }
+                        }
+                  }
             }
-          }
-        }
       }
 }
 
