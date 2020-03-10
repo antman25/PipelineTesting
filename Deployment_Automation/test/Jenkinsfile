@@ -2,6 +2,20 @@ node('DEPLOY')
 {
 	checkout scm
 
+	def my_config = readJSON file: 'Deployment_Automation/config/MyConfig.json'
+        def keys = my_config.keySet() as List
+
+	println ("Config ${my_config}")
+	println ("Keys: ${keys}")
+        
+        properties (
+        [
+                parameters (
+                         [ choice(name: 'CHOICE', choices: keys, description: 'Pick something') ]
+                        )
+        ])
+
+
 	stage ('Step 1')
 	{
 		println ('Test Step 1')
