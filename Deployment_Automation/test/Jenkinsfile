@@ -6,7 +6,7 @@ node('DEPLOY')
 	}
 
 	def my_config = [:]
-	def keys []	
+	def keys = []	
 
 	try
 	{
