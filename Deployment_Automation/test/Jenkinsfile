@@ -24,11 +24,15 @@ node('DEPLOY')
 	println ("Config ${my_config}")
 	println ("Keys: ${keys}")
         
+	param_list = [ choice(name: 'CHOICE', choices: keys, description: 'Pick something') ]
+	for (j=0;j<5;j++)
+	{
+		param_list = param_list + [ booleanParam("Test${j}", false, 'asdf') ]
+	}
+
         properties (
         [
-                parameters (
-                         [ choice(name: 'CHOICE', choices: keys, description: 'Pick something') ]
-                        )
+                parameters (param_list)
         ])
 
 	def host_a = "NO_HOST"
