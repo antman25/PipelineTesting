@@ -41,7 +41,7 @@ node('DEPLOY')
 	{
 		stage ("Step ${i}")
 		{
-			println ("This is step ${i}")
+			println ("This is step ${i} - ${CHOICE}")
 		}
 	}
 }
