@@ -5,8 +5,16 @@ node('DEPLOY')
 		checkout scm
 	}
 
-	def my_config = readJSON file: 'Deployment_Automation/config/MyConfig.json'
-        def keys = my_config['env_info'].keySet() as List
+	try
+	{
+		def my_config = readJSON file: 'Deployment_Automation/config/MyConfig.json'
+	        def keys = my_config['env_info'].keySet() as List
+	} 
+	catch (exception ex)
+	{
+		println("Exception: ${ex}")
+		keys = []
+	}
 
 	println ("Config ${my_config}")
 	println ("Keys: ${keys}")
