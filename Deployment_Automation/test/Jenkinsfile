@@ -1,5 +1,7 @@
 node('DEPLOY')
 {
+	environment(['MyTestKey' : 'MyTestValue'])
+
 	cur_env = env.getEnvironment()
 
 	print ("ENV: ${cur_env}")
@@ -39,7 +41,6 @@ node('DEPLOY')
 		//environment (['MyTestKey' : 'MyTestValue'])
         ])
 
-	environment(['MyTestKey' : 'MyTestValue'])
 
 	def host_a = "NO_HOST"
 	def host_b = "NO_HOST"
