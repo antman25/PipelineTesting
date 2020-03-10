@@ -25,10 +25,10 @@ node('DEPLOY')
 	println ("Keys: ${keys}")
         
 	param_list = [ choice(name: 'CHOICE', choices: keys, description: 'Pick something') ]
-	for (j=0;j<5;j++)
+	/*for (j=0;j<5;j++)
 	{
 		param_list = param_list + [ booleanParam("Test${j}", false, 'asdf') ]
-	}
+	}*/
 
         properties (
         [
