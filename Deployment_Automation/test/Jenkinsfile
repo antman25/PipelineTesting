@@ -1,6 +1,8 @@
 node('DEPLOY')
 {
-	print ("ENV: ${env}")
+	cur_env = env.getEnvironment()
+
+	print ("ENV: ${cur_env}")
 	stage ('Checkout SCM')
 	{
 		checkout scm
