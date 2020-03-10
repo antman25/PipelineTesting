@@ -10,7 +10,7 @@ node('DEPLOY')
 
 	try
 	{
-		my_config = readJSON file: 'Deployment_Automation/config/MyConfig.jsona'
+		my_config = readJSON file: 'Deployment_Automation/config/MyConfig.json'
 	        keys = my_config['env_info'].keySet() as List
 	} 
 	catch (Exception ex)
@@ -32,8 +32,16 @@ node('DEPLOY')
         ])
 
 
-	stage ('Step 1')
+	/*stage ('Step 1')
 	{
 		println ('Test Step 1')
+	}*/
+
+	for (i=0;i<10;i++)
+	{
+		stage ("Step ${i}")
+		{
+			println ("This is step ${i}")
+		}
 	}
 }
