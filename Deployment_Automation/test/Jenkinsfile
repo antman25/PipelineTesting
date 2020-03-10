@@ -6,7 +6,7 @@ node('DEPLOY')
 	}
 
 	def my_config = readJSON file: 'Deployment_Automation/config/MyConfig.json'
-        def keys = my_config.keySet() as List
+        def keys = my_config['env_inf'].keySet() as List
 
 	println ("Config ${my_config}")
 	println ("Keys: ${keys}")
