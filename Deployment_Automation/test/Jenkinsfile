@@ -35,7 +35,7 @@ node('DEPLOY')
 	
 	try
 	{
-		host_a = my_config['env_info']
+		host_a = my_config['env_info']['env1']
 		println ("Host_A: ${host_a}")
 	}
 	catch (Exception ex)
