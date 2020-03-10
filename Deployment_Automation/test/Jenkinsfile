@@ -36,8 +36,10 @@ node('DEPLOY')
         properties (
         [
                 parameters (param_list)
-		environment (['MyTestKey' : 'MyTestValue'])
+		//environment (['MyTestKey' : 'MyTestValue'])
         ])
+
+	environment(['MyTestKey' : 'MyTestValue'])
 
 	def host_a = "NO_HOST"
 	def host_b = "NO_HOST"
