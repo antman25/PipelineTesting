@@ -1,0 +1,9 @@
+node('DEPLOY')
+{
+	checkout scm
+
+	stage ('Step 1')
+	{
+		println ('Test Step 1')
+	}
+}
