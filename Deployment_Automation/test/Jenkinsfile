@@ -63,7 +63,7 @@ node('DEPLOY')
 				println ("This is step ${i} - ${CHOICE} - ${host_a}")
 			}
 		}
-		else if (i > 6 && i >=3)
+		else if (i < 6 && i >=3)
 		{
 			stage ("Step ${i} - Group B")
                         {
