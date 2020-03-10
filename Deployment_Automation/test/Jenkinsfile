@@ -10,7 +10,7 @@ node('DEPLOY')
 
 	try
 	{
-		my_config = readJSON file: 'Deployment_Automation/config/MyConfig.jsona'
+		my_config = readJSON file: 'Deployment_Automation/config/MyConfig.json'
 	        keys = my_config['env_info'].keySet() as List
 	} 
 	catch (Exception ex)
@@ -18,6 +18,8 @@ node('DEPLOY')
 		println("Exception: ${ex}")
 		keys = []
 	}
+
+	keys = ['Not Selected'] + keys
 
 	println ("Config ${my_config}")
 	println ("Keys: ${keys}")
