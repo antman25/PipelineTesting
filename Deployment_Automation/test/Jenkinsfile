@@ -31,6 +31,17 @@ node('DEPLOY')
                         )
         ])
 
+	def host_a = "NO_HOST"
+	
+	try
+	{
+		host_a = my_config['env_info']['${CHOICE}']['hosts']['type_a']
+	}
+	catch (Exception ex)
+	{
+		println ("Caught Ex: ${ex}")
+	}
+
 
 	/*stage ('Step 1')
 	{
@@ -41,7 +52,7 @@ node('DEPLOY')
 	{
 		stage ("Step ${i}")
 		{
-			println ("This is step ${i} - ${CHOICE}")
+			println ("This is step ${i} - ${CHOICE} - ${host_a}")
 		}
 	}
 }
