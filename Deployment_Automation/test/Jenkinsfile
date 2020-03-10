@@ -10,7 +10,7 @@ node('DEPLOY')
 
 	try
 	{
-		my_config = readJSON file: 'Deployment_Automation/config/MyConfig.json'
+		my_config = readJSON file: 'Deployment_Automation/config/MyConfig.jsona'
 	        keys = my_config['env_info'].keySet() as List
 	} 
 	catch (Exception ex)
