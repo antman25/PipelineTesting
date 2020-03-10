@@ -32,11 +32,15 @@ node('DEPLOY')
         ])
 
 	def host_a = "NO_HOST"
-	
+	def host_b = "NO_HOST"
+	def host_c = "NO_HOST"	
+
 	try
 	{
 		println("Selected '${CHOICE}'")
 		host_a = my_config['env_info']["${CHOICE}"]['hosts']['type_a']
+		host_b = my_config['env_info']["${CHOICE}"]['hosts']['type_b']
+		host_c = my_config['env_info']["${CHOICE}"]['hosts']['type_c']
 		println ("Host_A: ${host_a}")
 	}
 	catch (Exception ex)
@@ -52,9 +56,26 @@ node('DEPLOY')
 
 	for (i=0;i<10;i++)
 	{
-		stage ("Step ${i}")
+		if (i < 3 && i >= 0)
 		{
-			println ("This is step ${i} - ${CHOICE} - ${host_a}")
+			stage ("Step ${i} - Group A")
+			{
+				println ("This is step ${i} - ${CHOICE} - ${host_a}")
+			}
+		}
+		else if (i > 6 && i >=3)
+		{
+			stage ("Step ${i} - Group B")
+                        {
+                                println ("This is step ${i} - ${CHOICE} - ${host_b}")
+                        }
+		}
+		else
+		{
+			stage ("Step ${i} - Group C")
+                        {
+                                println ("This is step ${i} - ${CHOICE} - ${host_c}")
+                        }
 		}
 	}
 }
