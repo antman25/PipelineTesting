@@ -1,4 +1,128 @@
 {
-	"key1" : "value1",
-	"key2" : [ "val1", "val2" ]
+	"env_info" : 
+	{
+		"env1" : 
+		{
+			"hosts" : 
+			{
+				"type_a" : "hostA.env1.org",
+				"type_b" : "hostB.env1.org",	
+				"type_c" : "hostC.env1.org"
+			},
+			"deployment_flow" : "flow_a"
+		},
+		"env2" : 
+		{
+			"hosts" : 
+			{
+				"type_a" : "hostA.env2.org",
+				"type_b" : "hostB.env2.org",	
+				"type_c" : "hostC.env2.org"
+			},
+			"deployment_flow" : "flow_b"
+		}
+	},
+	"flow_definition" : 
+	{
+		"flow_a" : 
+		[
+			{
+				"step_id" : "010",
+				"jenkinsfile_location" : "Deployment_Automation/common/Step1/jenkinsfile",
+				"params" : 
+				[
+					{
+						"param_name" : "runStep1",
+						"param_type" : "boolean",
+						"param_desc" : "Run Step 1"
+					}
+				]
+			},
+			{
+				"step_id" : "020",
+				"jenkinsfile_location" : "Deployment_Automation/common/Step2/jenkinsfile",
+				"params" : 
+				[
+					{
+						"param_name" : "runStep2",
+						"param_type" : "boolean",
+						"param_desc" : "Run Step 2"
+					}
+				]
+			},
+			{
+				"step_id" : "030",
+				"jenkinsfile_location" : "Deployment_Automation/common/Step3/jenkinsfile",
+				"params" : 
+				[
+					{
+						"param_name" : "runStep3",
+						"param_type" : "boolean",
+						"param_desc" : "Run Step 3"
+					},
+					{
+						"param_name" : "runStep3_path",
+						"param_type" : "string",
+						"param_desc" : "Run Step 3 path"
+					}
+				]
+			}	
+		],
+		"flow_b" : 
+		[
+			{
+				"step_id" : "010",
+				"jenkinsfile_location" : "Deployment_Automation/common/Step1/jenkinsfile",
+				"params" : 
+				[
+					{
+						"param_name" : "runStep1",
+						"param_type" : "boolean",
+						"param_desc" : "Run Step 1"
+					}
+				]
+			},
+			{
+				"step_id" : "020",
+				"jenkinsfile_location" : "Deployment_Automation/common/Step2a/jenkinsfile",
+				"params" : 
+				[
+					{
+						"param_name" : "runStep2a",
+						"param_type" : "boolean",
+						"param_desc" : "Run Step 2a"
+					}
+				]
+			},
+			{
+				"step_id" : "025",
+				"jenkinsfile_location" : "Deployment_Automation/common/Step2b/jenkinsfile",
+				"params" : 
+				[
+					{
+						"param_name" : "runStep2b",
+						"param_type" : "boolean",
+						"param_desc" : "Run Step 2b"
+					}
+				]
+			},
+			{
+				"step_id" : "030",
+				"jenkinsfile_location" : "Deployment_Automation/common/Step3/jenkinsfile",
+				"params" : 
+				[
+					{
+						"param_name" : "runStep3",
+						"param_type" : "boolean",
+						"param_desc" : "Run Step 3"
+					},
+					{
+						"param_name" : "runStep3_path",
+						"param_type" : "string",
+						"param_desc" : "Run Step 3 path"
+					}
+				]
+			}	
+		]
+	}					
 }
