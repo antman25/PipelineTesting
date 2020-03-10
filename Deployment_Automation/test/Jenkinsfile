@@ -36,7 +36,7 @@ node('DEPLOY')
 	try
 	{
 		println("Selected '${CHOICE}'")
-		host_a = my_config['env_info']["${CHOICE}"]['hosts']['host_a']
+		host_a = my_config['env_info']["${CHOICE}"]
 		println ("Host_A: ${host_a}")
 	}
 	catch (Exception ex)
