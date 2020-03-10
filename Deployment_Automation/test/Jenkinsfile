@@ -27,7 +27,7 @@ node('DEPLOY')
 	param_list = [ choice(name: 'CHOICE', choices: keys, description: 'Pick something'), booleanParam(name: 'Option1', defaultValue: false, description: 'Some Text') ]
 	for (j=0;j<5;j++)
 	{
-		param_list = param_list + [ booleanParam("Test${j}", false, 'asdf') ]
+		param_list = param_list + [ booleanParam(name: "Test${j}", defaultValue: false, description: 'asdf') ]
 	}
 
         properties (
