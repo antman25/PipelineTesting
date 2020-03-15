@@ -26,7 +26,7 @@ folder('/DeploymentAutomation/OrchJobs') {
 }
 
 
-pipelineJob("/Deployment Automation/OrchJobs/OrchJob1") 
+pipelineJob("/DeploymentAutomation/OrchJobs/OrchJob1") 
 {
 	def repo = 'https://github.com/antman25/PipelineTesting.git'
 	description("Pipeline for $repo")
