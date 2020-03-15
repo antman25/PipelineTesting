@@ -83,8 +83,8 @@ folder('/DeploymentAutomation') {
 }
 
 folder('/DeploymentAutomation/HelperJobs') {
-    displayName('Deployment Automation - HelperJobs')
-    description('Deployment Automation - Helper Jobs desc')
+    displayName('HelperJobs')
+    description('HelperJobs')
 }
 
 /*folder('RemoveTestA') {
