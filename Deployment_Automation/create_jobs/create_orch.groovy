@@ -14,13 +14,13 @@ def branchApi = new URL("https://api.github.com/repos/${project}/branches")
 def branches = new groovy.json.JsonSlurper().parse(branchApi.newReader())
 
 
-folder('/Deployment Automation') {
-    displayName('Deployment Automation')
+folder('/DeploymentAutomation') {
+    displayName('DeploymentAutomation')
     description('Deployment Automation - Desc')
 }
 
 
-folder('/Deployment Automation/OrchJobs') {
+folder('/DeploymentAutomation/OrchJobs') {
     displayName('OrchJobs')
     description('OrchJobs')
 }
