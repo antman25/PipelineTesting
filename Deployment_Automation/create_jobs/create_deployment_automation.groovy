@@ -77,7 +77,7 @@ inputJson.each { k, v ->
 println (keys)
 
 
-folder('Deployment Automation') {
+folder('/DeploymentAutomation') {
     displayName('Deployment Automation')
     description('Deployment Automation - Desc')
 }
@@ -87,7 +87,7 @@ folder('Deployment Automation') {
     description('Deployment Automation - Desc')
 }*/
 
-branches.each {
+/*branches.each {
     def branchName = it.name
     def jobName = "${branchName}".replaceAll('/','-')
     def jobPath = "Deployment Automation/" + jobName
@@ -104,24 +104,24 @@ branches.each {
             println(" why print this test")
         }
     }
-}
+}*/
 
- folder("FolderTest") 
+/*folder("FolderTest") 
       {
             displayName("FolderTest")
             description("FolderTest")
-      }
+      }*/
 
 for (i = 0;i<20;i++)
 {
-      folder("FolderTest/TestFolder${i}") 
+      folder("/DeploymentAutomation/HelperJobs/TestFolder${i}") 
       {
             displayName("TestFolder${i}")
             description("TestFolder${i}")
       }
       for (j=0;j<20;j++)
       {
-            pipelineJob("FolderTest/TestFolder${i}/DSL_Pipeline ${i} - ${j} -asdf") 
+            pipelineJob("/DeploymentAutomation/HelperJobs/TestFolder${i}/DSL_Pipeline ${i} - ${j} -asdf") 
             {
                   def repo = 'https://github.com/antman25/PipelineTesting.git'
                   description("Pipeline for $repo")
