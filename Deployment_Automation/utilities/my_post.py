@@ -41,10 +41,9 @@ print ('-------------------------')
 post_id = resp_json['id']
 print ('post id: %s' % post_id)
 
-time.sleep(2.0)
+time.sleep(5.0)
 
 post_data2 = { 	'id' : post_id,
-		'channel_id' : channel_id,
               	'message' : 'test2'
             }
 
@@ -52,7 +51,7 @@ params2 = json.dumps(post_data2).encode('utf-8')
 print('PARAMS2: %s' % str(params2))
 req2_url = base_mm_url + posts_url + '/' + post_id
 print ('req2 = %s' % req2_url)
-req2 = urllib.request.Request(req2_url,params2)
+req2 = urllib.request.Request(url=req2_url,data=params2,method='PUT')
 req2.add_header('Authorization', 'Bearer %s' % token)
 req2.add_header('content-type', 'application/json')
 
