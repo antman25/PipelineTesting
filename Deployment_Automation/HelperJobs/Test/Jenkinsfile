@@ -1,0 +1,23 @@
+node ("DEPLOY")
+{
+    stage ('Checkout')
+    {
+	checkout scm
+
+    }
+
+    stage ('TestPassword')
+    {
+
+    withCredentials([
+            usernamePassword(credentialsId: 'MyTestID',
+              usernameVariable: 'username',
+              passwordVariable: 'password')
+          ]) {
+            print 'username=' + username + 'password=' + password
+	    sh ("Deployment_Automation/utilities/print_args.py ${username} ${password}")
+            //print 'username.collect { it }=' + username.collect { it }
+            //print 'password.collect { it }=' + password.collect { it }
+          }
+     }
+}
