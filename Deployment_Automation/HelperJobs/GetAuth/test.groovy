@@ -31,6 +31,7 @@ def getAuth()
 			}
 		}
 		print(userMap)
+		writeJSON ('test_users.json')
 	}
 }
 
