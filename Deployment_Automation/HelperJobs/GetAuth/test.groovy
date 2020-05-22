@@ -16,7 +16,7 @@ def getAuth()
         	def permissions = authStrategy.getGrantedPermissions()
 	   //print (permissions)
 		permissions.each { key, val ->
-		print("KEY: ${key} -- VAL: ${val}"
+			print("KEY: ${key} -- VAL: ${val}")
 	}
 }
 
