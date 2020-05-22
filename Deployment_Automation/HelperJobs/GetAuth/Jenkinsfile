@@ -15,7 +15,8 @@ pipeline
 				{
 					//def test_file= load('Deployment_Automation/HelperJobs/GetAuth/test.groovy')
 					//print (test_file)
-					print("test")
+					//print("test")
+					def test_file = load('Deployment_Automation/HelperJobs/GetAuth/test.groovy')
 				}
 			}
 		}
