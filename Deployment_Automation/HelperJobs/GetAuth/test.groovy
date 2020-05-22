@@ -20,7 +20,7 @@ def getAuth()
 			print("KEY: ${perm} -- VAL: ${user}")
 			perm_id = perm.getId()
 			print("Permission: ${perm_id}")
-			if (userMap.containsKey(perm_id))
+			if (userMap.containsKey(user))
 			{
 				userMap.add(perm_id)
 			}
