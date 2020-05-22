@@ -9,11 +9,13 @@ pipeline
 	{	
 		stage ('Blah')
 		{
-			
-			script
+			steps
 			{
-				def test_file= load('Deployment_Automation/HelperJobs/GetAuth/test.groovy')
-				print (test_file)
+				script
+				{
+					def test_file= load('Deployment_Automation/HelperJobs/GetAuth/test.groovy')
+					print (test_file)
+				}
 			}
 		}
 	}
