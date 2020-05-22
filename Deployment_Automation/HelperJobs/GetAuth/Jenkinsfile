@@ -13,8 +13,8 @@ pipeline
 			{
 				script
 				{
-					def test_file= load('Deployment_Automation/HelperJobs/GetAuth/test.groovy')
-					print (test_file)
+					//def test_file= load('Deployment_Automation/HelperJobs/GetAuth/test.groovy')
+					//print (test_file)
 				}
 			}
 		}
