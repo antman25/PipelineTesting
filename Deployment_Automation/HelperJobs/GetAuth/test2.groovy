@@ -29,6 +29,6 @@ import hudson.security.ProjectMatrixAuthorizationStrategy
 			}
 		}
 		print(userMap)
-		writeJSON (file: 'test_users.json', json: userMap, pretty: 4)
+		//writeJSON (file: 'test_users.json', json: userMap, pretty: 4)
 	}
 
