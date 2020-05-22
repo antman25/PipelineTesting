@@ -17,6 +17,7 @@ pipeline
 					//print (test_file)
 					//print("test")
 					def test_file = load('Deployment_Automation/HelperJobs/GetAuth/test.groovy')
+					test_file.getAuth()
 				}
 			}
 		}

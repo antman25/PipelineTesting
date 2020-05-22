@@ -13,8 +13,8 @@ def getAuth()
 	
 	if(authStrategy instanceof hudson.security.GlobalMatrixAuthorizationStrategy)
 	{
-        //	def permissions = authStrategy.getGrantedPermissions()
-	//   //print (permissions)
+        	def permissions = authStrategy.getGrantedPermissions()
+		print (permissions)
 	//	permissions.each { key, val ->
 	//		print("KEY: ${key} -- VAL: ${val}")
 	}
