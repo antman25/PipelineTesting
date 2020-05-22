@@ -18,6 +18,7 @@ def getAuth()
 		permissions.each { key, val ->
 			print("KEY: ${key} -- VAL: ${val}")
 		}
+	}
 }
 
 return this
