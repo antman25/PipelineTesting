@@ -5,16 +5,14 @@ pipeline
 		label 'DEPLOY'
 	}
 	
-	stages
-	{
 		stage ('Blah')
 		{
+			
 			script
 			{
 				def test_file= load('Deployment_Automation/HelperJobs/GetAuth/test.groovy')
 				print (test_file)
 			}
 		}
-	}
 
 }
