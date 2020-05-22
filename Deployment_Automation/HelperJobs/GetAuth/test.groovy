@@ -18,7 +18,7 @@ def getAuth()
 		//print (permissions)
 		permissions.each { perm, user ->
 			print("KEY: ${perm} -- VAL: ${user}")
-			perm_id = perm.getID()
+			perm_id = perm.getId()
 			print("Permission: ${perm_id}")
 			if (userMap.containsKey(perm_id))
 			{
