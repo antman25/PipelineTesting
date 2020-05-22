@@ -31,7 +31,7 @@ def getAuth()
 			}
 		}
 		print(userMap)
-		writeJSON ('test_users.json')
+		writeJSON file: 'test_users.json' json: userMap pretty: true
 	}
 }
 
