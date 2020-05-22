@@ -26,7 +26,7 @@ def getAuth()
 			}
 			else
 			{
-				userMap[user] = [ perm_id ]
+				userMap[user] = [ perm_id ] as List
 			}
 		}
 		print(userMap)
