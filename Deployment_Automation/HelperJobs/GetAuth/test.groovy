@@ -13,12 +13,23 @@ def getAuth()
 	
 	if(authStrategy instanceof hudson.security.GlobalMatrixAuthorizationStrategy)
 	{
+		def userMap = [:]
         	def permissions = authStrategy.getGrantedPermissions()
 		//print (permissions)
-		permissions.each { perm_key, val ->
-			print("KEY: ${perm_key} -- VAL: ${val}")
-			print(perm_key.getId())
+		permissions.each { perm, user ->
+			print("KEY: ${perm} -- VAL: ${user}")
+			perm_id = perm.getID()
+			print("Permission: ${perm_id}")
+			if (userMap.containsKey(perm_id))
+			{
+				userMap.add(perm_id)
+			}
+			else
+			{
+				userMap[perm_id] = [ user ]
+			}
 		}
+		print(userMap)
 	}
 }
 
