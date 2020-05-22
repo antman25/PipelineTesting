@@ -11,13 +11,13 @@ def getAuth()
 	//print (authStrategy)
 
 	
-	if(authStrategy instanceof hudson.security.GlobalMatrixAuthorizationStrategy)
-	{
-        	def permissions = authStrategy.getGrantedPermissions()
-	   //print (permissions)
-		permissions.each { key, val ->
-			print("KEY: ${key} -- VAL: ${val}")
-	}
+	//if(authStrategy instanceof hudson.security.GlobalMatrixAuthorizationStrategy)
+	//{
+        //	def permissions = authStrategy.getGrantedPermissions()
+	//   //print (permissions)
+	//	permissions.each { key, val ->
+	//		print("KEY: ${key} -- VAL: ${val}")
+	//}
 }
 
 return this
